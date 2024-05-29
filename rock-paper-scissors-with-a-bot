@@ -1,0 +1,26 @@
+function game() {
+    const choices = ['rock', 'paper', 'scissors'];
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+    let userChoice = prompt("Do you choose rock, paper or scissors?").toLowerCase();
+
+    if (choices.includes(userChoice)) {
+        alert("Computer chose: " + computerChoice);
+
+        if (userChoice === computerChoice) {
+            alert("It's a tie!");
+        } else if (
+            (userChoice === "rock" && computerChoice === "scissors") ||
+            (userChoice === "scissors" && computerChoice === "paper") ||
+            (userChoice === "paper" && computerChoice === "rock")
+        ) {
+            alert("You win!");
+        } else {
+            alert("You lose! Try again.");
+        }
+    } else {
+        alert("Invalid choice. Please choose either rock, paper, or scissors.");
+    }
+}
+
+game();
